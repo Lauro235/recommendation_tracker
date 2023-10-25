@@ -3,15 +3,14 @@ import Navigation from "./components/Navigation";
 
 import { useContext, useState } from "react";
 import { UserContext } from "./main";
+import { IUser } from "./data/users";
 
 function App() {
   const users = useContext(UserContext);
-  const [currentUser, setCurrentUser] = useState(
-    users !== null ? users[0].id : 1
-  );
+  const [currentUser, setCurrentUser] = useState(users !== null && users[0]);
 
-  const updateUser = (id: number) => {
-    setCurrentUser(id);
+  const updateUser = (profile: IUser) => {
+    setCurrentUser(profile);
   };
 
   console.log(currentUser);
