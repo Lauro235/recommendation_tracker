@@ -1,9 +1,11 @@
-export type TUsers = Array<{
-  id: number
-  firstName: string
-  surname: string
-  image?: string
-}>
+export interface IUser {
+  id: number;
+  firstName: string;
+  surname: string;
+  image?: string;
+}
+
+export type TUsers = Array<IUser>
 
 const users: TUsers = [
   {
